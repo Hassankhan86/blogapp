@@ -5,14 +5,13 @@
 <!-- <p style="text-align: center">Employee Add Page </p> -->
 
 
-<form action="" method="post" autocomplete="off">
+<form action="" method="post" autocomplete="off" >
     {% csrf_token %}
 
-    <!-- {{form|crispy}} -->
-
+{#    <!-- {{form|crispy}} -->#}
 {#    {{form.fullname|as_crispy_field}}#}
 {#    {{form.mobile|as_crispy_field}}#}
-<label class="bmd-label-floating" style="font-weight: bold; color: black;">fullname</label> <input class="form-control" type="text" name="fullname"   placeholder="Enter Your " />
+<label class="bmd-label-floating" style="font-weight: bold; color: black;">fullname</label> <input class="form-control" type="text" name="fullname" value="{{ form.position }}"  placeholder="Enter Your " />
    <label class="bmd-label-floating" style="font-weight: bold; color: black;">Mobile </label> <input class="form-control" type="text" name="mobile"   placeholder="Enter Your " />
     <label class="bmd-label-floating" style="font-weight: bold; color: black;">emp_code</label> <input class="form-control" type="text" name="emp_code"   placeholder="Enter Your " />
     <label class="bmd-label-floating" style="font-weight: bold; color: black;">Position</label> <input class="form-control" type="text" name="position"   placeholder="Enter Your " />

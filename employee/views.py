@@ -148,7 +148,7 @@ def employee_form(request,id=0):
         emp.user = request.user
         emp.save()
 
-
+    EMp1 = Employee()
     print('------------------------')
     # form = EmployeeForm()
     # if request.method == 'POST':
@@ -159,9 +159,9 @@ def employee_form(request,id=0):
     #         form.save()
     #         return redirect('/list',)
             
-    # context = {'form':emp,'form':id}
+    # context = {'form':EMp1,}
     print('------------------------')
-    return render(request,'employee/employee_form.html')
+    return render(request,'employee/employee_form.html',)
 
     # if request.method == "GET":
 
@@ -186,6 +186,7 @@ def employee_form(request,id=0):
     #     return redirect('/list')
 
 def update_emp(request,pk):
+    print('------------------------')
 
     employee = Employee.objects.get(id=pk)
     print('Employee : ',employee.position)
@@ -199,8 +200,9 @@ def update_emp(request,pk):
             return redirect('/list')
 
     context = {'form':form}
+    print('------------------------')
 
-    return render(request,'employee/employee_form.html',context)
+    return render(request,'employee/update_form.html',context)
 
 def employee_delete(request,pk):
 
