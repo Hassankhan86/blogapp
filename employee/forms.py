@@ -27,7 +27,10 @@ class EmployeeForm(forms.ModelForm):
         super(EmployeeForm,self).__init__(*args, **kwargs)
         self.fields['position'].empty_label = 'Select'
         self.fields['emp_code'].required = False
+        self.fields['fullname'].required = False
+        self.fields['mobile'].required = False
         self.fields['position'].required = False
+
 
             # for visible in self.visible_fields():
             #     visible.field.widget.attrs['class'] = 'form-control'
