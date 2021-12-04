@@ -30,6 +30,9 @@
             <td>emp_code</td>
 
             <td>Position</td>
+                        <td>Created-Date</td>
+            <td>Updated-Date</td>
+
             <td>  <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
                 <i class="fas fa-plus"></i> Add New
             </a>  
@@ -44,6 +47,8 @@
             <td>{{ ee.mobile }}</td>
             <td>{{ ee.emp_code }}</td>
             <td>{{ ee.position }}</td>
+            <td>{{ ee.created }}</td>
+            <td>{{ ee.updated }}</td>
 
             <td>
 
