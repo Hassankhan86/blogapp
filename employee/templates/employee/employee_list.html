@@ -1,0 +1,60 @@
+{% extends 'employee/base.html' %}
+
+
+{% block content %}
+{#<!-- {{user.username}} -->#}
+{#<!-- {{user.mobile}} -->#}
+{##}
+{#<!-- {{request.username}}#}
+{#{{request.emp_code}} -->#}
+
+{#{{ user }}#}
+{#{{ request.user.Employee.fullname }}#}
+
+
+{#{{ user1.model.Employee }}#}
+{#{% for a in user1 %}#}
+{#    {{ user1.fullname }}#}
+{#    {{ user1.mobile }}#}
+{#        {{ user1.position }}#}
+
+
+{#{% endfor %}#}
+<p style="text-align: center">Employee Details Page </p>
+
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Full Name</td>
+            <td>Mobike</td>
+            <td>emp_code</td>
+
+            <td>Position</td>
+            <td>  <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
+                <i class="fas fa-plus"></i> Add New
+            </a>  
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+                {% for ee in user1 %}
+
+        <tr>
+            <td>{{ ee.fullname }}</td>
+            <td>{{ ee.mobile }}</td>
+            <td>{{ ee.emp_code }}</td>
+            <td>{{ ee.position }}</td>
+
+            <td>
+
+<a class="btn btn-sm btn-primary" href="{% url 'update_emp' ee.id %}">Update</a>
+            <a class="btn btn-sm btn-danger" href="{% url 'employee_delete' ee.id %}">Delete</a>
+</td>
+        </tr>
+{% endfor %}
+        </tbody>
+
+</table>
+{# {% for employee in employee_list %}#}
+{#  {% endfor %}#}
+{% endblock content %}
