@@ -121,17 +121,47 @@ def employee_form(request,id=0):
     # dd = request.user.id
     # print(dd)
     # print('Employee : ', employee1.position)
-    form = EmployeeForm()
-    if request.method == 'POST':
-        # employee1 = Employee.objects.filter(id=id)
+    id = request.user.id
 
-        form = EmployeeForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/list',)
+    if request.method == 'POST':
+        emp = Employee()
+        # emp.save()
+        name = request.POST.get('fullname')
+        mob = request.POST.get('mobile')
+        em_code = request.POST.get('emp_code')
+        pos = request.POST.get('position')
+
+        print(name)
+        print(mob)
+        print(em_code)
+        print(pos)
+
+        emp.fullname = name
+        emp.mobile = mob
+        emp.emp_code = em_code
+        emp.position = pos
+
+        emp.save()
+
+        # emp.user.add(request.user)
+
+        emp.user = request.user
+        emp.save()
+
+
+    print('------------------------')
+    # form = EmployeeForm()
+    # if request.method == 'POST':
+    #     # employee1 = Employee.objects.filter(id=id)
+    #
+    #     form = EmployeeForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('/list',)
             
-    context = {'form':form}
-    return render(request,'employee/employee_form.html',context)
+    # context = {'form':emp,'form':id}
+    print('------------------------')
+    return render(request,'employee/employee_form.html')
 
     # if request.method == "GET":
 
