@@ -32,6 +32,7 @@
             <td>Position</td>
                         <td>Created-Date</td>
             <td>Updated-Date</td>
+            <td>Created-By</td>
 
             <td>  <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
                 <i class="fas fa-plus"></i> Add New
@@ -49,6 +50,7 @@
             <td>{{ ee.position }}</td>
             <td>{{ ee.created }}</td>
             <td>{{ ee.updated }}</td>
+            <td>{{ ee.user }}</td>
 
             <td>
 
