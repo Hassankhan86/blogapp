@@ -290,10 +290,10 @@ def register_page(request):
                 user = form.save()
                 # user = form.save()
                 username = form.cleaned_data.get('username')
-                Employee.objects.create(
-                    user = user,
-                    fullname=username,
-                )
+                # Employee.objects.create(
+                #     user = user,
+                #     fullname=username,
+                # )
                 messages.success(request, 'Account was Successfully created for ' + username)
                 return redirect('login')
 
